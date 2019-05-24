@@ -16,11 +16,24 @@ export default class Vendedor extends Component {
       <View style={{ backgroundColor: '#396AC0', alignItems: 'center', height: '100%', width: '100%' }} >
         <ActionBar pageName={nome} goBack={() => this.props.navigation.goBack()} />
 
-        <ScrollView style={{ width: '100%' }}>
+        <ScrollView style={{ width: '100%', height: '100%' }}>
+
+          <View style={styles.CardAlertas} elevation={10}>
+            <View style={styles.CardAlertasHeader}>
+              <Text style={styles.CardHeader__NomeVendedor}>Alertas</Text>
+            </View>
+
+            <View style={styles.CardAlertasBody}>
+              <Text style={{ fontSize: 14, color: '#E82222', fontWeight: 'bold' }}>% do roteiro realizado menor do que o esperado</Text>
+              <Text style={{ fontSize: 14, color: '#E82222', fontWeight: 'bold' }}>% do roteiro realizado menor do que o esperado</Text>
+              <Text style={{ fontSize: 14, color: '#E82222', fontWeight: 'bold' }}>% do roteiro realizado menor do que o esperado</Text>
+            </View>
+          </View>
+
           <View style={styles.Card} elevation={10}>
             <View style={styles.CardHeader}>
               <Text style={styles.CardHeader__NomeVendedor}>Visitas do Roteiro</Text>
-              <TouchableOpacity style={{ borderRadius: 100, backgroundColor: '#4ABA58', paddingHorizontal: 10, paddingVertical: 8 }}>
+              <TouchableOpacity style={{ borderRadius: 100, backgroundColor: '#4ABA58', paddingHorizontal: 10, paddingVertical: 8 }}  onPress={() => this.props.navigation.navigate('RoteiroVendedor', {nome: nome})}>
                 <Text style={{ color: '#fff', fontWeight: 'bold' }}>Roteiro do Dia</Text>
               </TouchableOpacity>
             </View>
@@ -128,6 +141,8 @@ export default class Vendedor extends Component {
             </View>
           </View>
 
+
+
         </ScrollView>
 
       </View>
@@ -138,7 +153,6 @@ export default class Vendedor extends Component {
 
 const styles = StyleSheet.create({
   Card: {
-    // flex: 1,
     backgroundColor: 'white',
     width: '95%',
     borderRadius: 5,
@@ -166,6 +180,32 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexWrap: 'wrap',
     paddingHorizontal: 5,
+    paddingVertical: 10
+  },
+
+  CardAlertas: {
+    backgroundColor: '#ffcece',
+    width: '95%',
+    borderRadius: 5,
+    margin: 10
+  },
+
+  CardAlertasHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    width: '100%',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ff6d6d'
+  },
+
+  CardAlertasBody: {
+    // flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    paddingHorizontal: 10,
     paddingVertical: 10
   },
 

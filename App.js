@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import Vendedor from './src/pages/Vendedor/Vendedor'
-import Vendedores from './src/pages/Vendedores/Vendedores'
 import Menu from './src/pages/Menu/Menu'
+import Vendedores from './src/pages/Vendedores/Vendedores'
+import Vendedor from './src/pages/Vendedor/Vendedor'
+import VendedorRoteiro from './src/pages/Vendedor/VendedorRoteiro'
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -19,7 +20,9 @@ const AppNavigator = createStackNavigator(
   {
     Home: Menu,
     Vendedores: Vendedores,
-    Vendedor: Vendedor
+    Vendedor: Vendedor,
+    RoteiroVendedor: VendedorRoteiro,
+    
   },
   {
     initialRouteName: "Home",

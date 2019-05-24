@@ -11,10 +11,10 @@ const ActionBar = props => {
   return (
 
     <View style={styles.ActionBar}>
-      <Text style={styles.Titulo}>{props.pageName}</Text>
       <TouchableNativeFeedback onPress={props.goBack}>
           <Icon name="arrow-left" style={styles.Voltar} />
       </TouchableNativeFeedback>
+      <Text style={styles.Titulo} numberOfLines={1}>{props.pageName}</Text>
 
     </View>
   )
@@ -28,16 +28,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
-    // justifyContent: 'space-between'
   },
 
   Titulo: {
     color: '#fff',
     fontSize: 18,
-    position: 'absolute',
     fontWeight: 'bold',
-    width: '110%',
-    textAlign: 'center'
+    width: '85%',
+    textAlign: 'center',
   },
 
   Voltar: {

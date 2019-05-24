@@ -27,12 +27,40 @@ class CardVendedoresList extends Component {
   }
 
   componentDidMount() {
-    this._get('https://jsonplaceholder.typicode.com/users').then(
-      data => {
-        this.setState({ vendedores: data })
+    // this._get('https://jsonplaceholder.typicode.com/users').then(
+    //   data => {
+    //     this.setState({ vendedores: data })
 
-      }
-    )
+    //   }
+    // )
+
+    let data = [
+      {name: "Nome 1"},
+      {name: "Nome 2"},
+      {name: "Nome 3"},
+      {name: "Nome 4"},
+      {name: "Nome 5"},
+      {name: "Nome 6"},
+      {name: "Nome 7"},
+      {name: "Nome 8"},
+      {name: "Nome 9"},
+      {name: "Nome 10"},
+      {name: "Nome 11"},
+      {name: "Nome 12"},
+      {name: "Nome 13"},
+      {name: "Nome 14"},
+      {name: "Nome 15"},
+      {name: "Nome 16"},
+      {name: "Nome 17"},
+      {name: "Nome 18"},
+      {name: "Nome 19"},
+      {name: "Nome 20"},
+      {name: "Nome 21"},
+      {name: "Nome 22"},
+    ] 
+    setTimeout(() => {
+      this.setState({ vendedores: data })
+    }, 1);
   }
 
   _get = async (endpoint) => {
